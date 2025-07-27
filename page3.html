@@ -33,17 +33,40 @@
 
     .popup-message {
       display: none;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.8);
       color: #fff;
-      padding: 30px 40px;
+      padding: 20px;
       border-radius: 20px;
-      font-size: 1.5rem;
-      position: absolute;
+      font-size: 1rem;
+      position: fixed;
       top: 50%;
       left: 50%;
+      max-width: 90vw;
+      max-height: 80vh;
+      overflow-y: auto;
       transform: translate(-50%, -50%);
-      z-index: 50;
+      z-index: 999;
       animation: fadeIn 1s ease forwards;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .popup-message button {
+      background-color: #f43f5e;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 500px) {
+      .popup-message {
+        font-size: 0.9rem;
+      }
     }
 
     @keyframes fadeIn {
@@ -68,6 +91,7 @@
       border-radius: 9999px;
       font-weight: bold;
       z-index: 10;
+      cursor: pointer;
     }
 
     .thank-you {
@@ -89,12 +113,14 @@
   <img src="cake.jpg" alt="Birthday Cake" class="cake" onclick="showMessage()" />
 
   <div id="popup" class="popup-message">
-    🎉Happy Birthday to the one who has been my biggest supporter, my secret keeper, and my safe space.<br> You’ve been a
-    guiding light in my life, always showing up with love, laughter, and endless patience — even when I didn’t deserve
-    it.<br> Your heart is the most beautiful part of you, and I feel so lucky to be a part of it. You’ve given me memories
-    to treasure for a lifetime, and a friendship I’ll never find anywhere else.<br> Today, I just want you to know how
-    incredibly proud I am of the person you are, and how deeply I cherish you.<br> May your year ahead be as bright, bold,
-    and beautiful as your soul. <br>Happy Birthday, my angel — you mean the world to me. 🎂💕
+    <button onclick="closeMessage()">Close</button>
+    🎉Happy Birthday to the one who has been my biggest supporter, my secret keeper, and my safe space.<br><br>
+    You’ve been a guiding light in my life, always showing up with love, laughter, and endless patience — even when I didn’t deserve it.<br><br>
+    Your heart is the most beautiful part of you, and I feel so lucky to be a part of it.<br><br>
+    You’ve given me memories to treasure for a lifetime, and a friendship I’ll never find anywhere else.<br><br>
+    Today, I just want you to know how incredibly proud I am of the person you are, and how deeply I cherish you.<br><br>
+    May your year ahead be as bright, bold, and beautiful as your soul.<br><br>
+    Happy Birthday, my angel — you mean the world to me. 🎂💕
   </div>
 
   <div class="thank-you">Thank you for being part of this beautiful memory 💖</div>
@@ -108,6 +134,11 @@
     function showMessage() {
       const popup = document.getElementById("popup");
       popup.style.display = 'block';
+    }
+
+    function closeMessage() {
+      const popup = document.getElementById("popup");
+      popup.style.display = 'none';
     }
   </script>
 
