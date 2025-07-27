@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday - Memories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffd1dc, #ffe3b3);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .balloon {
+            width: 40px;
+            height: 60px;
+            background-color: #f87171;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .slider-container {
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .slide {
+            min-width: 250px;
+            height: 300px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .slide:hover {
+            transform: scale(1.05);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hover-message {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            width: 100%;
+            height: 50%;
+            padding: 10px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .slide:hover .hover-message {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body class="relative p-4">
+
+    <!-- Play Music Button -->
+    <button onclick="playMusic()"
+        class="fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-md z-50">
+        Play Music
+    </button>
+    <audio id="bg-music" src="what_makes_u_beautiful.mp3" loop></audio>
+
+    <!-- Balloon Decorations -->
+    <div class="absolute top-10 left-10 balloon"></div>
+    <div class="absolute top-20 right-16 balloon bg-green-400"></div>
+
+    <!-- Heading Section -->
+    <div class="text-center mt-16">
+        <h1 class="text-4xl font-bold text-pink-600">Happy Birthday!</h1>
+        <p class="text-lg mt-2 text-white bg-pink-500 p-4 rounded-lg shadow-lg inline-block">
+            🎂 Happy Birthday to the most special person in my life — my sister, my constant, and my forever friend.<br>
+            From childhood fights to late-night talks, from sharing secrets to wiping each other’s tears, we’ve built a
+            bond that’s unbreakable.<br> You’re the one who knows me better than anyone else, who stands by me even when I
+            don’t say a word. Your strength inspires me, your love comforts me, and your presence makes my world
+            brighter. <br>On your birthday, I just want to tell you how grateful I am to have you. May your life be filled
+            with the same joy, warmth, and love that you bring into mine every single day.<br> You deserve nothing but the
+            absolute best. Happy Birthday, meri jaan! I love you endlessly.
+        </p>
+    </div>
+
+    <!-- Slider Section -->
+    <div class="slider-container mt-12">
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="img1.jpg" alt="Memory 1">
+                <div class="hover-message">You’re not just my sister, you’re my sunshine in the darkest days. Wishing
+                    you all the happiness in the world today and always!</div>
+            </div>
+            <div class="slide">
+                <img src="img2.jpg" alt="Memory 2">
+                <div class="hover-message">No matter how far we are, our hearts are always connected. Happy Birthday,
+                    sis. You’re truly one in a million</div>
+            </div>
+            <div class="slide">
+                <img src="img3.jpg" alt="Memory 3">
+                <div class="hover-message">Watching you grow into the amazing person you are has been my greatest joy.
+                    I’m so proud of you, and I’m even prouder to call you my sister.</div>
+            </div>
+            <div class="slide">
+                <img src="IMG_1411.JPG" alt="Memory 4">
+                <div class="hover-message">You’ve always been the strong one — for me, for everyone. Today, I hope you
+                    feel how deeply loved, valued, and cherished you are</div>
+            </div>
+            <div class="slide">
+                <img src="20.jpg" alt="Memory 5">
+                <div class="hover-message">Zindagi mein jitne rang hain, wo sab tujh mein hain. Tu meri roshni bhi hai,
+                    aur meri parchhayi bhi.</div>
+            </div>
+            <div class="slide">
+                <img src="12345.jpg" alt="Memory 6">
+                <div class="hover-message">Tere bina toh meri duniya adhoori hai. Tu meri zindagi ka wo hissa hai jo
+                    kabhi alag nahi ho sakta.</div>
+            </div>
+            <div class="slide">
+                <img src="123.jpg" alt="Memory 7">
+                <div class="hover-message">Behen sirf ek rishte ka naam nahi, ek ehsaas hai… jo har dard mein saath deti
+                    hai, har khushi mein muskaraati hai. Janamdin mubarak meri jaan!</div>
+            </div>
+            <div class="slide">
+                <img src="1234.jpg" alt="Memory 8">
+                <div class="hover-message">Jab tak tu mere saath hai, mujhe kisi aur sahare ki zarurat nahi.</div>
+            </div>
+            <div class="slide">
+                <img src="21.jpg" alt="Memory 9">
+                <div class="hover-message">Zindagi mein kitni bhi tension ho, tera ek phone ya ek baat sab kuch theek
+                    kar deti hai</div>
+            </div>
+            <div class="slide">
+                <img src="123.jpg" alt="Memory 10">
+                <div class="hover-message">Na hoon main shayar, na likhne ka hunar hai mujhmein,
+                    Par teri khushi ke liye, har lafz dil se nikalta hai.</div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="text-center mt-4">
+            <button onclick="scrollSlider(-1)"
+                class="text-2xl mx-2 bg-pink-400 text-white w-12 h-12 rounded-full">←</button>
+            <button onclick="scrollSlider(1)"
+                class="text-2xl mx-2 bg-pink-400 text-white w-12 h-12 rounded-full">→</button>
+        </div>
+    </div>
+
+    <!-- Let's Go Button -->
+    <div class="text-center mt-10">
+        <a href="page3.html"
+            class="bg-green-500 text-white px-6 py-3 rounded-full text-lg shadow-lg hover:bg-green-600 transition">
+            Let's Go →
+        </a>
+    </div>
+
+    <script>
+        function scrollSlider(direction) {
+            const slider = document.getElementById("slider");
+            const slideWidth = slider.querySelector(".slide").offsetWidth + 20;
+            slider.scrollBy({
+                left: direction * slideWidth,
+                behavior: "smooth"
+            });
+        }
+
+        function playMusic() {
+            const music = document.getElementById("bg-music");
+            music.play();
+        }
+    </script>
+</body>
+
+</html>
